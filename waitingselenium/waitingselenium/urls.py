@@ -20,5 +20,6 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('demo', TemplateView.as_view(template_name='demo.html'), name='demo')
+    path('demo-scrolldown', TemplateView.as_view(template_name='demo_scrolldown.html'), name='demo_scrolldown'),
+    path('demo-element-load', TemplateView.as_view(template_name='demo_element_load.html'), name='demo_element_load')
 ]
