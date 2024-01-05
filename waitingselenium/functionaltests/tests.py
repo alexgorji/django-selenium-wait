@@ -8,6 +8,17 @@ from functionaltests.base import FunctionalTest
 
 
 class TestWait(FunctionalTest):
+    def test_do_not_scroll_down_and_wait(self):
+        self.driver.get(f"{self.live_server_url}{reverse('demo_scrolldown')}")
+        wait = WebDriverWait(self.driver, timeout=10)
+        wait.until(lambda d: self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").is_displayed())
+        self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").click()
+
+    def test_do_not_scroll_down_and_wait_implicitly(self):
+        self.driver.implicitly_wait(10)
+        self.driver.get(f"{self.live_server_url}{reverse('demo_scrolldown')}")
+        self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").click()
+
     def test_scroll_down_and_wait(self):
         self.driver.get(f"{self.live_server_url}{reverse('demo_scrolldown')}")
         self.driver.maximize_window()
