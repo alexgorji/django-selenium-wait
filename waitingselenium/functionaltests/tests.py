@@ -19,6 +19,10 @@ class TestWait(FunctionalTest):
         self.driver.get(f"{self.live_server_url}{reverse('demo_scrolldown')}")
         self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").click()
 
+    def test_do_not_scroll_and_do_not_wait(self):
+        self.driver.get(f"{self.live_server_url}{reverse('demo_scrolldown')}")
+        self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").click()
+
     def test_scroll_down_and_wait(self):
         self.driver.get(f"{self.live_server_url}{reverse('demo_scrolldown')}")
         self.driver.maximize_window()
