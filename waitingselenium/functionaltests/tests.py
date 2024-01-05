@@ -21,3 +21,8 @@ class TestWait(FunctionalTest):
         wait = WebDriverWait(self.driver, timeout=10)
         wait.until(lambda d: self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").is_displayed())
         self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").click()
+
+    def test_implicit_wait_for_element_load(self):
+        self.driver.implicitly_wait(10)
+        self.driver.get(f"{self.live_server_url}{reverse('demo_element_load')}")
+        self.driver.find_element(By.CSS_SELECTOR, "input[value='Save']").click()
