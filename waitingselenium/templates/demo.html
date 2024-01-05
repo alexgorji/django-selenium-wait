@@ -1,3 +1,4 @@
+{% load demo_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,9 @@
     <title>DEMO</title>
 </head>
 <body>
-
+    {% for number in 500000|times %}
+        <p>{{ number }}</p>
+    {% endfor %}
+    <input type="submit" name="demo-save" value="Save">
 </body>
 </html>

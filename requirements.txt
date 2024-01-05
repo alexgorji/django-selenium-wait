@@ -1,3 +1,5 @@
-Django
-selenium
-pytest-django
+Django==5.0.1
+selenium==4.16.0
+pytest==7.4.4
+pytest-django==4.7.0
+
