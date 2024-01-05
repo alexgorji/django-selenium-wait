@@ -6,9 +6,9 @@
     <title>DEMO</title>
 </head>
 <body>
-    {% for number in 500000|times %}
-        <p>{{ number }}</p>
-    {% endfor %}
-    <input type="submit" name="demo-save" value="Save">
+{% for number in 500000|times %}
+    <p>{{ number }}</p>
+{% endfor %}
+<a id=id_success href="{% url "demo_success" %}">click me!</a>
 </body>
 </html>
